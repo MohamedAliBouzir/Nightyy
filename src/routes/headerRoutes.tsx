@@ -9,8 +9,6 @@ import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
 import SummaryHeader from '../pages/_layout/_headers/HomeHeader';
 
 const headers: RouteProps[] = [
-	{ path: demoPagesMenu.login.path, element: null },
-	{ path: demoPagesMenu.signUp.path, element: null },
 	{ path: demoPagesMenu.page404.path, element: null },
 	{
 		path: dashboardPagesMenu.summary.path,
@@ -18,7 +16,6 @@ const headers: RouteProps[] = [
 	},
 	{ path: dashboardPagesMenu.general.path, element: <ProfilePageHeader /> },
 	{ path: `${MigrationPageMenu.migrationID.path}/:id`, element: <ProfilePageHeader />},
-	{path: dashboardPagesMenu.migrationLauncher.path, element: <ProfilePageHeader />},
 	{
 		path: `*`,
 		element: <SummaryHeader />,

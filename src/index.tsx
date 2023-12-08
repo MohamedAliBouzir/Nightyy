@@ -6,11 +6,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-	<AuthContextProvider>
 		<ThemeContextProvider>
 			<Router>
 				<React.StrictMode>
@@ -18,7 +16,6 @@ const children = (
 				</React.StrictMode>
 			</Router>
 		</ThemeContextProvider>
-	</AuthContextProvider>
 );
 
 const container = document.getElementById('root');

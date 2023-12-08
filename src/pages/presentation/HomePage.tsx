@@ -263,24 +263,13 @@ const HomePage = () => {
 								<div className='row g-4'>
 									<div className='col-auto'>
 										<Button
-											color='danger'
+											color='primary'
 											icon='History'
 											isOutline
 											size='lg'
 											tag='a'
 											href='history'>
 											History
-										</Button>
-									</div>
-									<div className='col-auto'>
-										<Button
-											color='success'
-											icon='NotStarted'
-											isOutline
-											size='lg'
-											tag='a'
-											href='/launch-migration'>
-											Start Migration
 										</Button>
 									</div>
 								</div>

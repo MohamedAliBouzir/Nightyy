@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { ISubHeaderProps } from '../SubHeader/SubHeader';
 import { IPageProps } from '../Page/Page';
 import { useNavigate } from 'react-router-dom';
-import AuthContext from '../../contexts/authContext';
 import { demoPagesMenu } from '../../menu';
 
 interface IPageWrapperProps {
@@ -30,16 +29,7 @@ const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
 				.setAttribute('content', description || process.env.REACT_APP_META_DESC || '');
 		});
 
-		const { user } = useContext(AuthContext);
-
 		const navigate = useNavigate();
-		useEffect(() => {
-			if (isProtected && user === '') {
-				navigate(`../${demoPagesMenu.login.path}`);
-			}
-			return () => {};
-			// eslint-disable-next-line react-hooks/exhaustive-deps
-		}, []);
 
 		return (
 			<div ref={ref} className={classNames('page-wrapper', 'container-fluid', className)}>

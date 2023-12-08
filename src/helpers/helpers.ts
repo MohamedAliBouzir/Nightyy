@@ -1,7 +1,3 @@
-export function test() {
-	return null;
-}
-
 export function getOS() {
 	const { userAgent } = window.navigator;
 	const { platform } = window.navigator;
@@ -28,17 +24,6 @@ export function getOS() {
 }
 
 
-export const mergeRefs = (refs: any[]) => {
-	return (value: any) => {
-		refs.forEach((ref) => {
-			if (typeof ref === 'function') {
-				ref(value);
-			} else if (ref != null) {
-				ref.current = value;
-			}
-		});
-	};
-};
 
 export const randomColor = () => {
 	const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
@@ -46,39 +31,4 @@ export const randomColor = () => {
 	const color = Math.floor(Math.random() * colors.length);
 
 	return colors[color];
-};
-
-export const priceFormat = (price: number) => {
-	return price.toLocaleString('en-US', {
-		style: 'currency',
-		currency: 'USD',
-	});
-};
-
-export const average = (array: any[]) => array.reduce((a, b) => a + b) / array.length;
-
-export const percent = (value1: number, value2: number) =>
-	Number(((value1 / value2 - 1) * 100).toFixed(2));
-
-export const getFirstLetter = (text: string, letterCount = 2): string =>
-	// @ts-ignore
-	text
-		.toUpperCase()
-		.match(/\b(\w)/g)
-		.join('')
-		.substring(0, letterCount);
-
-export const debounce = (func: (arg0: any) => void, wait = 1000) => {
-	let timeout: string | number | NodeJS.Timeout | undefined;
-
-	return function executedFunction(...args: any[]) {
-		const later = () => {
-			clearTimeout(timeout);
-			// @ts-ignore
-			func(...args);
-		};
-
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-	};
 };

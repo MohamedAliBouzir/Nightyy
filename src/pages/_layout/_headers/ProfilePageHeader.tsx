@@ -4,7 +4,7 @@ import Avatar from '../../../components/Avatar';
 import UserImage2Webp from '../../../assets/img/wanna/wanna1.webp';
 import UserImage2 from '../../../assets/img/wanna/wanna1.png';
 import CommonHeaderRight from './CommonHeaderRight';
-import USERS, { getUserDataWithId } from '../../../common/data/userDummyData';
+import { getUserDataWithId } from '../../../common/data/userDummyData';
 
 const ProfilePageHeader = () => {
 	return (

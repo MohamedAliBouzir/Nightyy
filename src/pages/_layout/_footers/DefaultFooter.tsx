@@ -20,7 +20,7 @@ const DefaultFooter = () => {
 								'link-dark': !darkModeStatus,
 								'link-light': darkModeStatus,
 							})}>
-							<small className='fw-bold'>Billcom Consulting Migration</small>
+							<small className='fw-bold'>Shwifty</small>
 						</a>
 					</div>
 				</div>

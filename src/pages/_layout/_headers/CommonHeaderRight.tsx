@@ -5,24 +5,12 @@ import classNames from 'classnames';
 import { useTour } from '@reactour/tour';
 import Button, { IButtonProps } from '../../../components/bootstrap/Button';
 import { HeaderRight } from '../../../layout/Header/Header';
-import OffCanvas, {
-	OffCanvasBody,
-	OffCanvasHeader,
-	OffCanvasTitle,
-} from '../../../components/bootstrap/OffCanvas';
-import Alert from '../../../components/bootstrap/Alert';
-import Dropdown, {
-	DropdownItem,
-	DropdownMenu,
-	DropdownToggle,
-} from '../../../components/bootstrap/Dropdown';
 import Icon from '../../../components/icon/Icon';
 import ThemeContext from '../../../contexts/themeContext';
 import LANG, { getLangWithKey, ILang } from '../../../lang';
 import showNotification from '../../../components/extras/showNotification';
 import useDarkMode from '../../../hooks/useDarkMode';
 import Popovers from '../../../components/bootstrap/Popovers';
-import Spinner from '../../../components/bootstrap/Spinner';
 
 interface ICommonHeaderRightProps {
 	beforeChildren?: ReactNode;
@@ -67,29 +55,6 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 		<HeaderRight>
 			<div className='row g-3'>
 				{beforeChildren}
-				{/* Tour Modal */}
-				{/* {localStorage.getItem('tourModalStarted') === 'shown' && (
-					<div className='col-auto position-relative'>
-						<Popovers trigger='hover' desc='Start the "DataMigrationMorpher" tour'>
-							<Button
-								// eslint-disable-next-line react/jsx-props-no-spreading
-								{...styledBtn}
-								icon='Tour'
-								onClick={() => setIsOpen(true)}
-								aria-label='Start the "DataMigrationMorpher" tour'
-							/>
-						</Popovers>
-						<Icon
-							icon='Circle'
-							className={classNames(
-								'position-absolute start-65',
-								'text-danger',
-								'animate__animated animate__heartBeat animate__infinite animate__slower',
-							)}
-						/>
-					</div>
-				)} */}
-
 				{/* Dark Mode */}
 				<div className='col-auto'>
 					<Popovers trigger='hover' desc='Dark / Light mode'>
@@ -120,46 +85,6 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 							aria-label='Toggle dark mode'
 						/>
 					</Popovers>
-				</div>
-
-				{/* Lang Selector */}
-				<div className='col-auto'>
-					{/* <Dropdown>
-						<DropdownToggle hasIcon={false}>
-							{typeof getLangWithKey(i18n.language as ILang['key']['lng'])?.icon ===
-							'undefined' ? (
-								<Button
-									// eslint-disable-next-line react/jsx-props-no-spreading
-									{...styledBtn}
-									className='btn-only-icon'
-									aria-label='Change language'
-									data-tour='lang-selector'>
-									<Spinner isSmall inButton='onlyIcon' isGrow />
-								</Button>
-							) : (
-								<Button
-									// eslint-disable-next-line react/jsx-props-no-spreading
-									{...styledBtn}
-									icon={
-										getLangWithKey(i18n.language as ILang['key']['lng'])?.icon
-									}
-									aria-label='Change language'
-									data-tour='lang-selector'
-								/>
-							)}
-						</DropdownToggle>
-						<DropdownMenu isAlignmentEnd data-tour='lang-selector-menu'>
-							{Object.keys(LANG).map((i) => (
-								<DropdownItem key={LANG[i].lng}>
-									<Button
-										icon={LANG[i].icon}
-										onClick={() => changeLanguage(LANG[i].lng)}>
-										{LANG[i].text}
-									</Button>
-								</DropdownItem>
-							))}
-						</DropdownMenu>
-					</Dropdown> */}
 				</div>
 				{afterChildren}
 			</div>

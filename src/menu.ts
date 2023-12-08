@@ -17,21 +17,6 @@ export const dashboardPagesMenu = {
 		icon: 'history',
 		subMenu: null,
 	},
-	migrationLauncher: {
-		id: 'launch-migration',
-		text: 'Launch Migration',
-		path: 'launch-migration',
-		icon: 'NotStarted',
-		subMenu: null,
-	},
-	migrationRealTime:{
-		id: 'migration-realtime',
-		text: 'Migration RealTime',
-		path: 'migration-live',
-		icon: 'NotStarted',
-		subMenu: null,
-		hide: true,
-	},
 };
 
 export const MigrationPageMenu = {
@@ -44,21 +29,6 @@ export const MigrationPageMenu = {
 };
 
 export const demoPagesMenu = {
-	login: {
-		id: 'login',
-		text: 'Login',
-		path: 'auth-pages/login',
-		icon: 'Login',
-		hide: true,
-	},
-	signUp: {
-		id: 'signUp',
-		text: 'Sign Up',
-		path: 'auth-pages/sign-up',
-		icon: 'PersonAdd',
-		hide: true,
-	},
-
 	page404: {
 		id: 'Page404',
 		text: '404 Page',

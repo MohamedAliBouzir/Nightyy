@@ -17,7 +17,7 @@ const HomeHeader = () => {
 								className={classNames('fs-3', 'fw-bold', {
 									'text-dark': !darkModeStatus,
 								})}>
-								Hi, Migration User! 👋
+								Hi, Shwifty User! 👋
 							</div>
 						</div>
 					</div>
